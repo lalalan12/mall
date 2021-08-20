@@ -1,6 +1,8 @@
 <!--  -->
 <template>
-  <div class="tabBarItems" @click="clickItems"><slot></slot></div>
+  <div class="tabBarItems" @click="clickItems" :class="{ color: isActive }">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -10,6 +12,11 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    isActive() {
+      return this.$route.path.indexOf(this.path) !== -1;
+    },
   },
   methods: {
     clickItems() {
@@ -23,5 +30,8 @@ export default {
 .tabBarItems {
   flex: 1;
   text-align: center;
+}
+.color {
+  color: var(--color-tint);
 }
 </style>
