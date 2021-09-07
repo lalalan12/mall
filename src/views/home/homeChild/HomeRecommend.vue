@@ -1,14 +1,10 @@
-<!--推荐-->
+<!-- recommend -->
 <template>
-  <div id="home-recommend">
-    <div
-      v-for="(item, index) in recommend"
-      :key="index"
-      class="home-recommend-item"
-    >
-      <a v-bind:href="item.link">
-        <img v-bind:src="item.image" alt="" />
-        <div>{{ item.title }}</div>
+  <div class="home-recommend">
+    <div class="home-recommend-items" v-for="(item,index) in recommend" :key="index">
+      <a :href="item.link">
+        <img :src="item.image" alt="">
+        <div>{{item.title}}</div>
       </a>
     </div>
   </div>
@@ -16,28 +12,32 @@
 
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {
+    }
   },
-  props: {
-    recommend: Array,
-  },
-};
+  props:{
+    recommend: {
+      type: Array
+    }
+  }
+}
 </script>
 
 <style  scoped>
-#home-recommend {
+.home-recommend {
   display: flex;
-  width: 100%;
-  padding: 10px 0 20px;
-  border-bottom: 8px solid #eee;
-  font-size: 14px;
-  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 10px solid #eeeeee;
 }
-.home-recommend-item {
+.home-recommend-items {
   flex: 1;
+  text-align: center;
+  font-size: 15px;
 }
-.home-recommend-item img {
-  width: 65px;
+.home-recommend-items img {
+  width: 80px;
+  margin: 12px 0;
 }
+
 </style>

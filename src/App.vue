@@ -1,27 +1,24 @@
-<!--  -->
+<!-- app -->
 <template>
-  <div>
-    <router-view></router-view>
-    <tab-bar>
-      <tab-bar-items path="/home">首页</tab-bar-items>
-      <tab-bar-items path="/category">分类</tab-bar-items>
-      <tab-bar-items path="/cart">购物车</tab-bar-items>
-      <tab-bar-items path="/profile">我的</tab-bar-items>
-    </tab-bar>
+  <div class="app">
+    <tab-control />
+    <router-view />
   </div>
 </template>
 
 <script>
-import TabBar from "components/common/tabbar/TabBar";
-import TabBarItems from "components/common/tabbar/TabBarItems";
-
+import TabControl from 'components/content/tabcontrol/TabControl.vue'
 export default {
-  components: { TabBar, TabBarItems },
-  data() {
-    return {};
+  data () {
+    return {}
   },
-};
+  components: {
+    TabControl,
+  }
+}
 </script>
 
 <style  scoped>
+@import "~assets/css/base.css"
+
 </style>

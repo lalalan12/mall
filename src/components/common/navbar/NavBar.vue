@@ -1,4 +1,4 @@
-<!-- 头部 -->
+<!-- 顶部导航 -->
 <template>
   <div class="nav-bar">
     <div class="left"><slot name="left"></slot></div>
@@ -9,24 +9,31 @@
 
 <script>
 export default {
-  data() {
-    return {};
-  },
-};
+  data () {
+    return {
+    }
+  }
+}
 </script>
 
 <style  scoped>
 .nav-bar {
+  position: relative;
+  top: 0;
   display: flex;
-  line-height: 44px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
-  box-shadow: 0 -5px 4px 4px black;
+  background-color: #ff8198;
+  color: #fff;
+  box-shadow: 0px -10px 3px 9px black;
+  z-index: 2;
 }
 .left,
+.center,
 .right {
-  width: 60px;
-}
-.center {
   flex: 1;
 }
+
 </style>

@@ -6,7 +6,9 @@
 </template>
 
 <script>
+import GoodsShow from '../home/homechild/HomeGoodsShow.vue';
 export default {
+  components: { GoodsShow },
   data() {
     return {};
   },

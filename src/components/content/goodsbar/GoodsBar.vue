@@ -1,50 +1,52 @@
 <!--  -->
 <template>
-  <div id="goods-bar">
-    <div
-      v-for="(item, index) in title"
-      :key="index"
-      class="goods-bar-items"
-      @click="changeCurrentIndex(index)"
-    >
-      <span :class="{ color: currentIndex === index }">{{ item }}</span>
+  <div class="goods-bar">
+    <div v-for="(item,index) in title" :key="index">
+      <span :class="{active: currentIndex==index}" @click="activeBar(index)">{{item}}</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      currentIndex: 0,
-    };
+      currentIndex: 0
+    }
   },
   props: {
-    title: Array,
+    title: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
   },
   methods: {
-    changeCurrentIndex(index) {
-      this.currentIndex = index;
-    },
-  },
-};
+    activeBar(index){
+      this.currentIndex=index
+      //发出事件
+      this.$emit('itemsBar',index)
+    }
+  }
+}
 </script>
 
 <style  scoped>
-#goods-bar {
+.goods-bar {
   display: flex;
-  line-height: 40px;
+  margin: 20px 0;
 }
-.goods-bar-items {
+.goods-bar div {
   flex: 1;
   text-align: center;
 }
-.goods-bar-items span {
-  padding: 4px;
+.goods-bar span {
+  padding: 8px;
+}
+.active {
+  color: #ff6985;
+  border-bottom: 2px solid #ff6985;
 }
 
-.color {
-  color: var(--color-tint);
-  border-bottom: 2px solid var(--color-tint);
-}
 </style>
