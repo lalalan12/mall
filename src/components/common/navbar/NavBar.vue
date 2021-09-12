@@ -25,7 +25,6 @@ export default {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  box-shadow: 0px -10px 3px 9px black;
   z-index: 2;
 }
 .left,

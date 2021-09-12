@@ -12,7 +12,7 @@
       <detail-recommend ref="recommend" :recommendList="recommendList" @imgLoad="imgLoad"/>
     </scroll>
     <back-top v-show="backTopIsShow" @backTop="backTop"/>
-    <detail-buttom-bar />
+    <detail-bottom-bar @addCart="addCart" />
   </div>
 </template>
 
@@ -30,7 +30,7 @@ import DetailGoodsInfo from './detailchild/DetailGoodsInfo.vue'
 import DetailParams from './detailchild/DetailParams.vue'
 import DetailComment from './detailchild/DetailComment.vue'
 import DetailRecommend from './detailchild/DetailRecommend.vue'
-import DetailButtomBar from './detailchild/DetailButtomBar.vue'
+import DetailBottomBar from './detailchild/DetailBottomBar.vue'
 import BackTop from '../../components/content/backtop/BackTop.vue'
 
 
@@ -46,7 +46,7 @@ export default {
     DetailParams,
     DetailComment,
     DetailRecommend,
-    DetailButtomBar,
+    DetailBottomBar,
     BackTop
   },
   data () {
@@ -70,11 +70,17 @@ export default {
     this.getRecommendA()
     
   },
-  updated(){
-    
-
-  },
   methods: {
+
+    addCart(){
+      let produce = {}
+      produce.iid = this.iid
+      produce.image = this.topImages[0]
+      produce.title = this.goods.title
+      produce.price = this.goods.nowPrice
+      produce.desc = this.goods.desc;
+      this.$store.dispatch('addCart',produce)
+    },
 
     itemIndex(index) {
       this.$refs.scroll.scrollTo(0,this.paramsPosition[index],200)

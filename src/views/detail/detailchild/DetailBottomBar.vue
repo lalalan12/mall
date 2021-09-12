@@ -1,6 +1,6 @@
 <!-- 底部 -->
 <template>
-  <div class="detail-buttom-bar">
+  <div class="detail-bottom-bar">
     <div class="left">
       <div class="left-item">
         <div class="item">
@@ -21,7 +21,7 @@
         <div class="text">收藏</div>
       </div>
     </div>
-    <div class="center">加入购物车</div>
+    <div class="center" @click="addCart">加入购物车</div>
     <div class="right">购买</div>
   </div>
 </template>
@@ -31,18 +31,22 @@ export default {
   data () {
     return {
     }
+  },
+  methods: {
+    addCart(){
+      this.$emit('addCart')
+    }
   }
 }
 </script>
 
 <style  scoped>
-.detail-buttom-bar {
+.detail-bottom-bar {
   position: fixed;
   bottom: 0;
   height: 60px;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0px 15px 11px 8px black;
   z-index: 5;
 }
 .left {

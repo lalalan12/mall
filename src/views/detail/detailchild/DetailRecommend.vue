@@ -19,7 +19,8 @@
 export default {
   data () {
     return {
-      iid: null
+      iid: null,
+      id: null
     }
   },
   props: {
