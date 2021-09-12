@@ -35,7 +35,7 @@ export default {
   flex:1;
 }
 .color {
-  color: #fd6481;
+  color: var(--color-high-text);
 }
 
 </style>

@@ -11,7 +11,7 @@
 export default {
   data () {
     return {
-      currentIndex: 0
+      
     }
   },
   props: {
@@ -20,11 +20,16 @@ export default {
       default() {
         return []
       }
+    },
+    currentIndex: {
+      type: Number,
+      default(){
+        return 0
+      }
     }
   },
   methods: {
     activeBar(index){
-      this.currentIndex=index
       //发出事件
       this.$emit('itemsBar',index)
     }
@@ -35,7 +40,10 @@ export default {
 <style  scoped>
 .goods-bar {
   display: flex;
-  margin: 20px 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #fff;
+  z-index: 2;
 }
 .goods-bar div {
   flex: 1;
@@ -45,8 +53,8 @@ export default {
   padding: 8px;
 }
 .active {
-  color: #ff6985;
-  border-bottom: 2px solid #ff6985;
+  color: var(--color-high-text);
+  border-bottom: 2px solid var(--color-high-text);
 }
 
 </style>

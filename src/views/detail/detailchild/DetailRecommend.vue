@@ -1,13 +1,16 @@
 <!-- 物品展示 -->
 <template>
-  <div class="home-goods-show">
-    <div class="goods-show-items" v-for="(item,index) in goods" :key="index" @click="getDetail(item)">
-        <img :src="item.show.img" alt="" @load="imgLoad">
+  <div class="detail-recommend">
+    <div class="recommend-header">热门推荐</div>
+    <div class="recommend-items">
+      <div class="items-info" v-for="(item,index) in recommendList" :key="index">
+        <img :src="item.image" alt="" @load="imgLoad">
         <div class="text">
           <p>{{item.title}}</p>
-          <span class="price">￥{{item.price}}</span>
-          <span class="cfav">{{item.cfav}}</span>
+        <span class="price">￥{{item.price}}</span>
+        <span class="cfav">{{item.cfav}}</span>
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -20,7 +23,7 @@ export default {
     }
   },
   props: {
-    goods: {
+    recommendList: {
       type: Object,
       default(){
         return null
@@ -43,25 +46,31 @@ export default {
 </script>
 
 <style  scoped>
-.home-goods-show {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.detail-recommend {
+  border-top: 5px solid #eee;
+  padding: 20px 0;
 }
-.goods-show-items{
-  width: 47%;
-  overflow: hidden;
+.recommend-header {
+  font-size: 15px;
+  padding-left: 10px;
 }
-.goods-show-items img {
-  width: 100%;
+.recommend-items {
+  width: 90vmin;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+.items-info img {
+  width: 90vmin;
   border-radius: 8px;
 }
+
 .text {
   font-size: 12px;
   margin: 5px;
   text-align: center;
 }
 .text p{
+  width: 90vmin;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

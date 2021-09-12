@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div>
+  <div class="home-nav-bar">
     <nav-bar>
       <template #center>
         <h3>购物街</h3>
@@ -23,5 +23,9 @@ export default {
 </script>
 
 <style  scoped>
+.home-nav-bar {
+  background-color: var(--color-high-text);
+  color: #fff;
+}
 
 </style>
