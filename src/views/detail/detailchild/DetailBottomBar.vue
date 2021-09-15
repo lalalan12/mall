@@ -23,18 +23,28 @@
     </div>
     <div class="center" @click="addCart">加入购物车</div>
     <div class="right">购买</div>
+    <toast :isShow="isShow" />
   </div>
 </template>
 
 <script>
+import Toast from 'components/common/toast/Toast.vue'
 export default {
   data () {
     return {
+      isShow: false
     }
+  },
+  components: {
+    Toast
   },
   methods: {
     addCart(){
       this.$emit('addCart')
+      this.isShow = true
+      setTimeout(()=>{
+        this.isShow = false
+      },1000)
     }
   }
 }

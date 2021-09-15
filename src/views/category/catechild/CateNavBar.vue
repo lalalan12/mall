@@ -1,12 +1,9 @@
 <!--  -->
 <template>
-  <div class="cart-nav-bar">
+  <div class="cate-nav-bar">
     <nav-bar>
       <template #center>
-        <h3>
-          购物车
-          (<span>{{counter}}</span>)
-        </h3>
+        <h3>商品分类</h3>
       </template>
     </nav-bar>
   </div>
@@ -18,17 +15,13 @@ export default {
   components: { NavBar },
   data () {
     return {
-      counter: 0
     }
-  },
-  created(){
-    this.counter = this.$store.state.produces.length
   }
 }
 </script>
 
 <style  scoped>
-.cart-nav-bar {
+.cate-nav-bar {
   background-color: var(--color-high-text);
   color: #fff;
 }

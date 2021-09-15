@@ -47,31 +47,25 @@ export default {
 </script>
 
 <style  scoped>
-.detail-recommend {
-  border-top: 5px solid #eee;
-  padding: 20px 0;
-}
-.recommend-header {
-  font-size: 15px;
-  padding-left: 10px;
-}
 .recommend-items {
-  width: 90vmin;
-  margin: 0 auto;
-  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.items-info{
+  width: 47%;
+  overflow: hidden;
 }
 .items-info img {
-  width: 90vmin;
+  width: 100%;
   border-radius: 8px;
 }
-
 .text {
   font-size: 12px;
   margin: 5px;
   text-align: center;
 }
 .text p{
-  width: 90vmin;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

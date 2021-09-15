@@ -92,10 +92,10 @@ export default {
     this.getHomeGoodsA('sell')
   },
   activated(){
-    this.$refs.scroll.scrollTo(0,this.saveY) //再次打开时回到离开时的位置
+    this.$refs.scroll.scrollTo(0,this.saveY,0) //再次打开时回到离开时的位置
   },
   deactivated(){
-    this.saveY=this.$refs.scroll.scrollSaveY() //获取页面离开时的位置
+    this.saveY = this.$refs.scroll.scrollSaveY() //获取页面离开时的位置
   },
   methods:{
     //goodsBar方法

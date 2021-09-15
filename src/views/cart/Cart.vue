@@ -1,11 +1,11 @@
 <!--  -->
 <template>
   <div class="cart">
-    <cart-nav-bar />
+    <cart-nav-bar/>
     <scroll class="content">
-      <cart-goods-item :produces="produces" />
+      <cart-goods-item/>
     </scroll>
-    <!-- <cart-bottom :produces="produces" /> -->
+    <cart-bottom/>
   </div>
 </template>
 
@@ -18,11 +18,8 @@ export default {
   components: { CartNavBar, CartBottom, CartGoodsItem, Scroll },
   data() {
     return {
-      produces: []
-    };
-  },
-  created(){
-    this.produces.push(...this.$store.state.produces)
+      
+    }
   }
 };
 </script>
@@ -32,6 +29,8 @@ export default {
   position: absolute;
   top: 50px;
   bottom: 80px;
+  left: 0;
+  right: 0;
   overflow: hidden;
 }
 </style>

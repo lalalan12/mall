@@ -131,6 +131,8 @@ export default {
   position: absolute;
   top: 50px;
   bottom: 60px;
+  left: 0px;
+  right: 0px;
   overflow: hidden;
 }
 
