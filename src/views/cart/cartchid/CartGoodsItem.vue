@@ -40,11 +40,7 @@ export default {
 .item-info {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
-}
-.item-info::after {
-  content: '';
-  clear: both;
-  display: block;
+  overflow: hidden;
 }
 .left {
   position: relative;

@@ -48,13 +48,14 @@ export default {
 .params-info div {
   border-bottom: 1px solid #eee;
   padding: 10px 0;
+  overflow: hidden;/*解决浮动撑不开父盒子问题，形成BFC撑开文档*/
 }
-.size-item::after,
+/* .size-item::after,
 .params-info div::after {
   clear: both;
   content: '';
   display: block;
-}/*解决浮动撑不开父盒子问题 */
+}解决浮动撑不开父盒子问题 */
 .size-item span {
   display: block;
   float: left;

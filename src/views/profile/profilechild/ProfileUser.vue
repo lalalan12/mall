@@ -56,11 +56,7 @@ export default {
   background-color: var(--color-high-text);
   color: #fff;
   padding: 15px 0;
-}
-.user::after {
-  content: '';
-  clear: both;
-  display: block;
+  overflow: hidden;
 }
 .user-img {
   margin-left: 20px;
